@@ -16,12 +16,14 @@
   <script src="http://cdn.jsdelivr.net/webjars/jquery/3.6.0/jquery.min.js"
           th:src="@{/webjars/jquery/jquery.min.js}"></script>
 
+  <link href="../../static/css/spring-core.css"
+        th:href="@{/css/spring-core.css}" rel="stylesheet" media="screen"/>
 </head>
 <body>
 
 <div class="container">
   <h1>This is my Thymeleaf index</h1>
-  IwasHere is <span th:text="${IwasHere}"></span>
+  <a href="/products">Got to Products page</a>
 </div>
 
 </body>

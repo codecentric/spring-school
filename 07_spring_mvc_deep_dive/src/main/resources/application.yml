@@ -1,5 +1,3 @@
 logging:
   level:
     org.springframework.web: INFO
-server:
-  port: 8095
