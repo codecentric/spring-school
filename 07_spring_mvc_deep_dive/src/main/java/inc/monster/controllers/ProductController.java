@@ -5,6 +5,7 @@ import inc.monster.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,10 +13,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class ProductController {
 
-    private ProductService productService;
+    private final ProductService productService;
 
     @Autowired
-    public void setProductService(ProductService productService) {
+    public ProductController(ProductService productService) {
         this.productService = productService;
     }
 
@@ -57,6 +58,15 @@ public class ProductController {
         model.addAttribute("product", productService.getProductById(id));
 
         return "productform";
+    }
+
+    // Remember this is not a REST-Api, we are requesting a view from the server
+    // The alternative would be to use a <form> with POST in the view
+    @GetMapping("/product/delete/{id}")
+    public String delete(@PathVariable Integer id) {
+        productService.deleteProduct(id);
+
+        return "redirect:/products";
     }
 
 }
