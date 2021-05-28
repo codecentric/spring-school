@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>monster.inc</groupId>
-    <artifactId>b-01-without-di</artifactId>
+    <artifactId>b-01-without-di-solution</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>${project.artifactId}</name>

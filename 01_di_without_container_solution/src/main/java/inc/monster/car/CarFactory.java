@@ -6,12 +6,10 @@ import inc.monster.car.wheels.LeftFrontWheel;
 import inc.monster.car.wheels.LeftRearWheel;
 import inc.monster.car.wheels.RightFrontWheel;
 import inc.monster.car.wheels.RightRearWheel;
-import org.junit.jupiter.api.Test;
 
-public class CarTest {
+public class CarFactory {
 
-    @Test
-    public void drive() {
+    public Car create() {
         LeftFrontWheel leftFrontWheel = new LeftFrontWheel();
         RightFrontWheel rightFrontWheel = new RightFrontWheel();
 
@@ -30,29 +28,6 @@ public class CarTest {
         car.setFrontAxle(frontAxle);
         car.setRearAxle(rearAxle);
 
-        car.drive();
-    }
-
-    @Test
-    public void stop() {
-        LeftFrontWheel leftFrontWheel = new LeftFrontWheel();
-        RightFrontWheel rightFrontWheel = new RightFrontWheel();
-
-        LeftRearWheel leftRearWheel = new LeftRearWheel();
-        RightRearWheel rightRearWheel = new RightRearWheel();
-
-        FrontAxle frontAxle = new FrontAxle();
-        frontAxle.setLeftFrontWheel(leftFrontWheel);
-        frontAxle.setRightFrontWheel(rightFrontWheel);
-
-        RearAxle rearAxle = new RearAxle();
-        rearAxle.setLeftRearWheel(leftRearWheel);
-        rearAxle.setRightRearWheel(rightRearWheel);
-
-        Car car = new Car();
-        car.setFrontAxle(frontAxle);
-        car.setRearAxle(rearAxle);
-
-        car.stop();
+        return car;
     }
 }

@@ -9,8 +9,18 @@ public class Car {
 
     private RearAxle rearAxle;
 
+    public void setFrontAxle(FrontAxle frontAxle) {
+        this.frontAxle = frontAxle;
+    }
+
+    public void setRearAxle(RearAxle rearAxle) {
+        this.rearAxle = rearAxle;
+    }
+
     public void drive() {
         System.out.println("This car is driving");
+        frontAxle.drive();
+        rearAxle.drive();
     }
 
     public void stop() {
