@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>monster.inc</groupId>
-    <artifactId>f-02-spring-mvc-list-products</artifactId>
+    <artifactId>f-03-spring-mvc-display-product</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>${project.artifactId}</name>
