@@ -1,4 +1,4 @@
-package inc.monster.controllers;
+package inc.monster.index.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,6 +8,6 @@ public class IndexController {
 
     @GetMapping("/")
     public String index() {
-        return "redirect:/products";
+        return "index";
     }
 }

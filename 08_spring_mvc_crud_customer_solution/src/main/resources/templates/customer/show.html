@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/head :: header (pagetitle='Spring MVC - Show cumstomer page')"></head>
+<body>
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-6">
+            <h2>Show Customer</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Customer Id:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${customer.id}">Customer Id</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Name:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${customer.name}"></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 sm-2 control-label">Email:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${customer.email}">Email</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 sm-2 control-label">Size:</label>
+                    <div class="col-sm-10">
+                        <p class="form-control-static" th:text="${customer.size}"></p>
+                    </div>
+                </div>
+            </form>
+            <a th:href="${'/customer/list'}">Back to customer list</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

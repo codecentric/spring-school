@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/head :: header (pagetitle='Spring MVC - List products page')"></head>
+<body>
+<div class="container">
+    <div th:if="${not #lists.isEmpty(products)}">
+        <h2>Product List</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Image URL</th>
+                <th>List</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr th:each="product : ${products}">
+                <td th:text="${product.id}"></td>
+                <td th:text="${product.description}"></td>
+                <td th:text="${product.price}"></td>
+                <td th:text="${product.imageUrl}"></td>
+                <td><a th:href="${'/product/show/' + product.id}">View</a> </td>
+                <td><a th:href="${'/product/edit/' + product.id}">Edit</a> </td>
+                <td><a th:href="${'/product/delete/' + product.id}">Delete</a> </td>
+            </tr>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <a href="/product/new">New Product</a>
+        </div>
+    </div>
+    <div>
+        <h3>Locale</h3>
+        <p>
+            Locale from Spring: <span th:text="${locale}"></span>
+        </p>
+        <p>
+            Locale from Thymeleaf: <span th:text="${#locale}"></span>
+        </p>
+        <p>
+            Switch: <a href="/product/list?lang=de">set to de</a>
+            <a href="/product/list?lang=en">set to en</a>
+        </p>
+        Sample: <span th:text="#{sampleProperty}"/>
+    </div>
+
+</div>
+
+</body>
+</html>
