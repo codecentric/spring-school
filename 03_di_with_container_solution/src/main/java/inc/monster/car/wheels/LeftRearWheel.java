@@ -1,5 +1,8 @@
 package inc.monster.car.wheels;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class LeftRearWheel {
 
     private String wheelName = "left rear wheel";

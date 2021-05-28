@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>monster.inc</groupId>
-    <artifactId>b-04_di_with_container</artifactId>
+    <artifactId>b-04_di_with_container_solution</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>${project.artifactId}</name>
