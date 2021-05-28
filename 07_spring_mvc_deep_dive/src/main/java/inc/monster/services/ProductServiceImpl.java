@@ -3,9 +3,11 @@ package inc.monster.services;
 import inc.monster.domain.Product;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -25,6 +27,21 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Product getProductById(Integer id) {
         return products.get(id);
+    }
+
+    @Override
+    public Product saveOrUpdateProduct(Product product) {
+        Objects.requireNonNull(product);
+        if (product.getId() == null) {
+            product.setId(getNextKey());
+        }
+        products.put(product.getId(), product);
+
+        return product;
+    }
+
+    private Integer getNextKey() {
+        return Collections.max(products.keySet()) + 1;
     }
 
     private void loadProducts() {
