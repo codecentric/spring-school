@@ -50,6 +50,20 @@
             <a href="/product/new">New Product</a>
         </div>
     </div>
+    <div>
+        <h3>Locale</h3>
+        <p>
+            Locale from Spring: <span th:text="${locale}"></span>
+        </p>
+        <p>
+            Locale from Thymeleaf: <span th:text="${#locale}"></span>
+        </p>
+        <p>
+            Switch: <a href="/products?lang=de">set to de</a>
+            <a href="/products?lang=en">set to en</a>
+        </p>
+        Sample: <span th:text="#{sampleProperty}"/>
+    </div>
 
 </div>
 

@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>monster.inc</groupId>
-    <artifactId>f-06-spring-mvc-delete-product</artifactId>
+    <artifactId>f-07-spring-mvc-validation-localisation</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>${project.artifactId}</name>
