@@ -1,0 +1,27 @@
+
+
+my:
+  value: Hello World!
+
+
+nesting:
+  value: Hello again!
+
+  nested:
+    value: Hello nested value!
+
+
+list:
+  roles:
+    - USER
+    - ADMIN
+
+
+valid:
+  email: me@you.de
+
+
+relaxed:
+  first-Name: Foo
+  lastName: Bar
+
