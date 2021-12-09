@@ -1,16 +1,17 @@
 package inc.monster.car;
 
-import inc.monster.car.CarTest.Configuration;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.ComponentScan;
+import org.junit.jupiter.api.Test;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(classes = {Configuration.class})
+@ContextConfiguration(classes = CarTest.Configuration.class)
+@SpringBootConfiguration
 public class CarTest {
 
     @TestConfiguration
