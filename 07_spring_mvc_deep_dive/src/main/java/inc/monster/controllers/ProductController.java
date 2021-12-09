@@ -2,9 +2,12 @@ package inc.monster.controllers;
 
 import inc.monster.domain.Product;
 import inc.monster.services.ProductService;
+import java.util.Locale;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,9 +24,10 @@ public class ProductController {
     }
 
     @GetMapping("/products")
-    public String listProducts(Model model) {
+    public String listProducts(Model model, Locale locale) {
 
         model.addAttribute("products", productService.listAllProducts());
+        model.addAttribute("locale", locale.toLanguageTag());
 
         return "products";
     }
@@ -45,18 +49,17 @@ public class ProductController {
     }
 
     @PostMapping(value = "/product")
-    public String saveOrUpdateProduct(Product product) {
-
+    public String saveOrUpdateProduct(@Valid Product product, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "productform";
+        }
         Product savedProduct = productService.saveOrUpdateProduct(product);
-
         return "redirect:/product/" + savedProduct.getId();
     }
 
     @GetMapping("product/edit/{id}")
     public String edit(@PathVariable Integer id, Model model) {
-
         model.addAttribute("product", productService.getProductById(id));
-
         return "productform";
     }
 
