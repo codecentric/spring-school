@@ -1,0 +1,3 @@
+my:
+  second:
+    property: Hello ${my.base.value} Again!
