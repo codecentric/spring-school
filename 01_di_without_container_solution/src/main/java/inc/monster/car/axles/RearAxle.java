@@ -9,8 +9,18 @@ public class RearAxle {
 
     private RightRearWheel rightRearWheel;
 
+    public void setLeftRearWheel(LeftRearWheel leftRearWheel) {
+        this.leftRearWheel = leftRearWheel;
+    }
+
+    public void setRightRearWheel(RightRearWheel rightRearWheel) {
+        this.rightRearWheel = rightRearWheel;
+    }
+
     public void drive() {
         System.out.println("I'm rotating (rear axle)");
+        leftRearWheel.drive();
+        rightRearWheel.drive();
     }
 
     public void stop() {
