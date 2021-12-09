@@ -1,12 +1,13 @@
-package inc.monster.domain;
+package inc.monster.product.domain;
 
-
+import inc.monster.common.domain.DomainObject;
 import java.math.BigDecimal;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-public class Product {
+public class Product implements DomainObject {
+
     private Integer id;
 
     // Validation with default message
@@ -24,10 +25,12 @@ public class Product {
 
     private String imageUrl;
 
+    @Override
     public Integer getId() {
         return id;
     }
 
+    @Override
     public void setId(Integer id) {
         this.id = id;
     }
